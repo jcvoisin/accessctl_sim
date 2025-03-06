@@ -1,0 +1,9 @@
+modbus:
+  type: rtu  # ou tcp
+  port: COM8
+  slave_address: 0x41
+  input_register_value: 0
+barrier:
+  initial_angle: 0
+  angular_speed: 15  # en degrés par seconde
+  
