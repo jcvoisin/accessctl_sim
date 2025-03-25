@@ -18,6 +18,9 @@ with open('accessctl_sim.yaml', 'r') as file:
 # Configuration initiale
 modbus_type = config['modbus']['type']
 modbus_port = config['modbus']['port']
+parity = config['modbus']['parity']
+baudrate = config['modbus']['baudrate']
+stopbits = config['modbus']['stopbits']
 slave_address = config['modbus']['slave_address']
 input_register_value = config['modbus']['input_register_value']
 initial_angle = config['barrier']['initial_angle']
@@ -50,7 +53,7 @@ def start_modbus_server():
 
     # Démarrage du serveur
     if modbus_type == 'rtu':
-        StartSerialServer(context=context, framer=FramerType.RTU, identity=identity, port=modbus_port, timeout=1)
+        StartSerialServer(context=context, framer=FramerType.RTU, identity=identity, port=modbus_port, timeout=1, baudrate=baudrate, parity=parity, stopbits=stopbits)
     elif modbus_type == 'tcp':
         StartTcpServer(context, identity=identity, address=("0.0.0.0", 502))
 
