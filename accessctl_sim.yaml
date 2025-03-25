@@ -1,6 +1,9 @@
 modbus:
   type: rtu  # ou tcp
   port: COM8
+  baudrate : 9600
+  parity : N
+  stopbits : 1
   slave_address: 0x41
   input_register_value: 0
 barrier:
