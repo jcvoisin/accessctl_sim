@@ -30,7 +30,7 @@ t = 0
 # Création du contexte Modbus
 store = ModbusSlaveContext(
     co=ModbusSequentialDataBlock(0, [0]*4),
-    ir=ModbusSequentialDataBlock(0, [input_register_value])
+    hr=ModbusSequentialDataBlock(0, [input_register_value])
 )
 
 # Fonction pour démarrer le serveur Modbus
